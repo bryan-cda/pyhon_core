@@ -28,6 +28,11 @@ else:
     elif d == 3:
         attempt = 5
 
+
+def get_bonus():
+    return magical_number * 2
+
+
 for round_game in range(1, attempt + 1):
 
     print("Round {} of {}".format(round_game, attempt))
@@ -40,7 +45,7 @@ for round_game in range(1, attempt + 1):
 
     if i == magical_number:
         print('Congratulations, this is the secret number')
-        print('Your premium is {} {:.2f}'.format('R$', 1.597898))
+        print('Your premium is {} {:.2f}'.format('R$', get_bonus() ))
         break
     else:
         if i > magical_number:
@@ -51,7 +56,9 @@ for round_game in range(1, attempt + 1):
             continue
 
 print('end of game.')
-print(i)
+print()
+
+
 
 
 
