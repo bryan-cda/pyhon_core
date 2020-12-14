@@ -15,7 +15,7 @@ round = 1
 
 while round <= attempt:
 
-    print("Round ", round, "of ", attempt)
+    print("Round {} of {}".format(round,attempt))
 
     i = int(input('type a magical number: '))
 
