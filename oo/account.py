@@ -10,7 +10,10 @@ class Account:
         self.__am = am
 
     def withdraw(self, value):
-        self.__am = self.__am - value
+        if value <= self.__am:
+            self.__am = self.__am - value
+        else:
+            print('insufficient funds')
 
     def deposit(self, value):
         self.__am = self.__am + value
