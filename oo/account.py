@@ -1,7 +1,3 @@
-import random
-from ctypes import c_char
-
-
 class Account:
 
     def __init__(self, ag, acc, am):
@@ -36,11 +32,11 @@ class Account:
 
     @property
     def acc(self):
-        return self.__cc
+        return self.__acc
 
     @acc.setter
     def acc(self, acc):
-        self.__cc = acc
+        self.__acc = acc
 
     @property
     def ag(self):
