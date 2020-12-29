@@ -1,26 +1,48 @@
 import random
+from ctypes import c_char
 
 
-class NuAccount:
+class Account:
 
-    def __init__(self, ag, cc, am):
-        self.ag = ag
-        self.cc = cc
-        self.am = am
-
-    def get_acc(self):
-        print("Welcome to NuBank \n Agency: {}, Current Account {}, Amount {}. ".format(self.ag, self.cc, self.am))
+    def __init__(self, ag, acc, am):
+        self.__ag = ag
+        self.__acc = acc
+        self.__am = am
 
     def withdraw(self, value):
-        self.am = self.am - value
+        self.__am = self.__am - value
 
     def deposit(self, value):
-        self.am = self.am + value
+        self.__am = self.__am + value
 
     def balance(self):
-        print(self.am)
+        print(self.__am)
 
-    def pix(self, value, origin, target):
+    @staticmethod
+    def transfer(value, origin, target):
         origin.withdraw(value)
         target.deposit(value)
-        print(origin.am)
+
+    @property
+    def amount(self):
+        return self.__am
+
+    @amount.setter
+    def amount(self, amount):
+        self.__am = amount
+
+    @property
+    def acc(self):
+        return self.__cc
+
+    @acc.setter
+    def acc(self, acc):
+        self.__cc = acc
+
+    @property
+    def ag(self):
+        return self.__ag
+
+    @ag.setter
+    def ag(self, ag):
+        self.__ag = ag
